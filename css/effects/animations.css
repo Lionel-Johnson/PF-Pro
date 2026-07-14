@@ -1,0 +1,18 @@
+section {
+
+    opacity: 0;
+
+    transform:
+        translateY(80px);
+
+    transition:
+        .8s;
+}
+
+section.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}

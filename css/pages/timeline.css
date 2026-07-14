@@ -1,0 +1,59 @@
+.timeline {
+
+    position: relative;
+
+    max-width: 1000px;
+    margin: auto;
+}
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    background:
+        linear-gradient(
+            var(--accent),
+            var(--gold)
+        );
+}
+
+.timeline-item {
+
+    width: 50%;
+    padding: 40px;
+
+    position: relative;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-content {
+
+    padding: 35px;
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        var(--glass-bg);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        var(--shadow);
+}

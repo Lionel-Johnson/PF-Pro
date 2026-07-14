@@ -1,0 +1,28 @@
+:root {
+
+    --bg-primary: #07162E;
+    --bg-secondary: #0B2144;
+
+    --accent: #38BDF8;
+    --accent-light: #74D8FF;
+
+    --text: #F8FAFC;
+    --text-secondary: #CBD5E1;
+
+    --glass-bg:
+        rgba(255,255,255,.05);
+
+    --glass-border:
+        rgba(255,255,255,.08);
+
+    --radius-sm: 15px;
+    --radius-md: 25px;
+    --radius-lg: 40px;
+
+    --shadow:
+        0 25px 60px
+        rgba(0,0,0,.30);
+
+    --transition:
+        .4s ease;
+}

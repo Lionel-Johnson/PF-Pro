@@ -1,0 +1,22 @@
+.mouse-glow {
+
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(56,189,248,.12);
+
+    filter:
+        blur(100px);
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
