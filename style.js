@@ -134,6 +134,23 @@ if(glass && leftDoor && rightDoor){
 
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const photo = document.querySelector(".glass-photo");
+
+    if (!photo) return;
+
+    document.addEventListener("mousemove", (e) => {
+        const rotateY = (window.innerWidth / 2 - e.clientX) / 35;
+        const rotateX = (e.clientY - window.innerHeight / 2) / 35;
+
+        photo.style.transform = `
+            perspective(1000px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+        `;
+    });
+});
+
 const photo = document.querySelector(".glass-photo");
 
 if(photo){
