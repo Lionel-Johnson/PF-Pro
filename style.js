@@ -66,22 +66,93 @@ langBtns.forEach(btn => {
     });
 });
 
-const photo=document.querySelector(".glass-photo");
+/* ===========================
+   PHOTO PARALLAX EFFECT
+   =========================== */
 
-document.addEventListener("mousemove",(e)=>{
+window.addEventListener("load",()=>{
 
-    const x=(window.innerWidth/2-e.clientX)/40;
+const left=document.querySelector(".left-door");
 
-    const y=(window.innerHeight/2-e.clientY)/40;
+const right=document.querySelector(".right-door");
 
-    photo.style.transform=
+setTimeout(()=>{
 
-        `rotateY(${x}deg) rotateX(${-y}deg)`;
+window.addEventListener("load",()=>{
+
+    const left=document.querySelector(".left-door");
+    const right=document.querySelector(".right-door");
+
+    if(left && right){
+
+        setTimeout(()=>{
+
+            left.classList.add("open-left");
+            right.classList.add("open-right");
+
+        },800);
+
+    }
 
 });
 
+right.style.transform="perspective(1200px) rotateY(115deg)";
 
+},1200);
 
+});
+
+const glass = document.querySelector(".glass-photo");
+const leftDoor = document.querySelector(".left-door");
+const rightDoor = document.querySelector(".right-door");
+
+if(glass && leftDoor && rightDoor){
+
+    function openDoors(){
+
+        leftDoor.classList.add("open-left");
+        rightDoor.classList.add("open-right");
+
+    }
+
+    function closeDoors(){
+
+        leftDoor.classList.remove("open-left");
+        rightDoor.classList.remove("open-right");
+
+    }
+
+    window.addEventListener("load",()=>{
+
+        setTimeout(openDoors,1200);
+
+    });
+
+    glass.addEventListener("mouseenter",openDoors);
+
+    glass.addEventListener("mouseleave",closeDoors);
+
+}
+
+const photo = document.querySelector(".glass-photo");
+
+if(photo){
+
+photo.addEventListener("mousemove",(e)=>{
+
+const rect=photo.getBoundingClientRect();
+
+const x=e.clientX-rect.left;
+
+const y=e.clientY-rect.top;
+
+photo.style.setProperty("--x",x+"px");
+
+photo.style.setProperty("--y",y+"px");
+
+});
+
+}
 
 /* ===========================
    TYPING EFFECT
@@ -268,3 +339,133 @@ document.addEventListener('keydown', (e) => {
 });
 
 console.log('Portfolio loaded successfully! 🚀');
+
+
+
+const projects=[
+
+{
+
+title:"Plateforme RH Nationale",
+
+description:"Développement d'une plateforme RH moderne basée sur Laravel et IA.",
+
+progress:42,
+
+date:"Livraison : Août 2026"
+
+},
+
+{
+
+title:"Application Mobile Santé",
+
+description:"Développement Flutter destiné aux centres de santé.",
+
+progress:81,
+
+date:"Tests utilisateurs"
+
+},
+
+{
+
+title:"Portail e-Gouvernement",
+
+description:"Transformation numérique des services administratifs.",
+
+progress:63,
+
+date:"Déploiement"
+
+},
+
+{
+
+title:"ERP Entreprise",
+
+description:"Gestion RH, Finance, Stock et Comptabilité.",
+
+progress:92,
+
+date:"Validation finale"
+
+},
+
+{
+
+title:"Portfolio Premium",
+
+description:"Nouvelle génération du portfolio Lionel Concept.",
+
+progress:70,
+
+date:"En cours"
+
+}
+
+];
+
+let current=0;
+
+
+const counter=document.getElementById("widget-counter");
+
+function showProject(){
+
+const p=projects[current];
+
+widget.innerHTML=`
+
+<div class="project-slide">
+
+<h3>${p.title}</h3>
+
+<p>${p.description}</p>
+
+<div class="progress-widget">
+
+<span style="width:${p.progress}%"></span>
+
+</div>
+
+<p style="margin-top:15px;color:#38BDF8;font-weight:bold;">
+
+${p.progress}% terminé
+
+</p>
+
+<p>
+
+${p.date}
+
+</p>
+
+</div>
+
+`;
+
+counter.textContent=`${current+1} / ${projects.length}`;
+
+current++;
+
+if(current>=projects.length){
+
+current=0;
+
+}
+
+}
+
+showProject();
+
+setInterval(showProject,6000);
+
+
+const widget = document.getElementById("project-widget");
+
+if(widget){
+
+    // tout le code du widget ici
+
+}

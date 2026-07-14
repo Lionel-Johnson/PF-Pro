@@ -84,24 +84,56 @@
         <!-- HERO -->
         <section id="hero" class="hero container">
             <div class="hero-left">
-                <span class="badge">Bienvenue sur mon portfolio</span>
-                <h1>Lionel Concept</h1>
-                <h2 id="typing-text">Développeur Full Stack</h2>
-                <p class="description">Concevoir, sécuriser et accompagner la transformation numérique.</p>
+               <span class="badge" data-i18n="heroBadge">
+Bienvenue sur mon portfolio
+</span>
+
+<h1 data-i18n="heroTitle">
+Lionel Concept
+</h1>
+
+<h2 id="typing-text" data-i18n="heroSubtitle">
+Développeur Full Stack
+</h2>
+
+<p class="description" data-i18n="heroDescription">
+Concevoir, sécuriser et accompagner la transformation numérique.
+</p>
 
                 <div class="buttons">
-                    <a href="assets/docs/Mon CV Pro.pdf" class="btn-primary">Télécharger mon CV</a>
+                    <a href="cv.html" class="btn-primary">
+    Télécharger mon CV
+</a>
                     <a href="#contact" class="btn-secondary">Me contacter</a>
                 </div>
             </div>
 
             <div class="hero-right">
 
-                <div class="glass-photo">
+<div class="glass-photo">
 
-                    <img src="assets/img/profile.png" alt="Lionel">
+    <div class="ring-left"></div>
+    <div class="ring-right"></div>
 
-                </div>
+    <div class="inner-ring"></div>
+
+    <div class="orbit orbit1"></div>
+    <div class="orbit orbit2"></div>
+
+    <div class="scan-line"></div>
+
+    <div class="reflection"></div>
+
+    <div class="mouse-light"></div>
+
+    <img src="assets/img/photo pro.jpg" alt="Lionel">
+
+</div>
+
+
+</div>
+
+</div>
 
                 <div class="stats-card">
                     <h3>15+</h3>
@@ -122,9 +154,25 @@
 
         <!-- ABOUT -->
         <section id="about" class="about container">
-            <div class="about-image">
-                <div class="placeholder-avatar large"></div>
-            </div>
+            <div class="about-widget glass">
+
+    <div class="widget-title">
+        <span class="live-dot"></span>
+        PROJETS EN COURS
+    </div>
+
+    <div id="project-widget">
+
+    </div>
+
+    <div class="widget-footer">
+        <span id="widget-counter">1 / 5</span>
+        <div class="widget-progress">
+            <div id="widget-progress-bar"></div>
+        </div>
+    </div>
+
+</div>
 
             <div class="about-content">
                 <span class="badge">À PROPOS DE MOI</span>
@@ -274,29 +322,32 @@
 
             <div class="portfolio-grid">
                 <article class="project-card glass">
-                    <div class="project-image">Projet 1</div>
+                    <a href="projects/gestion.html" class="btn-primary">
+                            Voir le projet
+                            </a>
                     <div class="project-content">
                         <h3>Système de Gestion</h3>
                         <p>Développement d'une plateforme moderne de gestion administrative.</p>
-                        <a href="#" class="btn-primary">Voir le projet</a>
                     </div>
                 </article>
 
                 <article class="project-card glass">
-                    <div class="project-image">Projet 2</div>
+                    <a href="projects/gestion.html" class="btn-primary">
+                            Voir le projet
+                            </a>
                     <div class="project-content">
                         <h3>Application Mobile</h3>
                         <p>Conception d'une application mobile professionnelle.</p>
-                        <a href="#" class="btn-primary">Voir le projet</a>
                     </div>
                 </article>
 
                 <article class="project-card glass">
-                    <div class="project-image">Projet 3</div>
+                    <a href="projects/gestion.html" class="btn-primary">
+                            Voir le projet
+                            </a>
                     <div class="project-content">
                         <h3>Design Institutionnel</h3>
                         <p>Création d'identités visuelles et interfaces premium.</p>
-                        <a href="#" class="btn-primary">Voir le projet</a>
                     </div>
                 </article>
             </div>
@@ -351,10 +402,10 @@
 
             <div class="glass contact-card">
                 <form class="contact-form">
-                    <input type="text" placeholder="Nom" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="text" placeholder="Sujet" required>
-                    <textarea rows="6" placeholder="Votre message" required></textarea>
+                    <input type="text"  name="name" placeholder="Votre Nom" required>
+                    <input type="email" name="email" placeholder="Votre E-mail" required>
+                    <input type="text" name="subject"placeholder="Votre sujet" required>
+                    <textarea rows="6" name="message" placeholder="Votre message" required></textarea>
                     <button type="submit" class="btn-primary">Envoyer</button>
                 </form>
             </div>
@@ -385,8 +436,10 @@
     </button>
 
     <!-- Main JS -->
-    <script src="./style.js"></script>
+
+    <script src="./language.js"></script>
     <script src="./js/cursor.js"></script>
+    <script src="./style.js"></script>
 </body>
 
 </html>
