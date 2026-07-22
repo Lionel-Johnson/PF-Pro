@@ -1,0 +1,29 @@
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+.zoom{
+
+    transition:.35s ease;
+
+}
+
+.zoom:hover{
+
+    transform:scale(1.03);
+
+}

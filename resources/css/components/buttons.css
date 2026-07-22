@@ -1,0 +1,23 @@
+button{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:var(--radius);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:var(--secondary);
+
+}

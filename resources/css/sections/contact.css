@@ -1,0 +1,224 @@
+.contact{
+
+    position:relative;
+
+    padding:140px 0;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #081C3D,
+        #0F2C60,
+        #1A3E7A
+    );
+
+}
+
+.contact-aurora{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.aurora{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+}
+
+.aurora-1{
+
+    width:500px;
+
+    height:500px;
+
+    background:#2563eb;
+
+    left:-120px;
+
+    top:80px;
+
+}
+
+.aurora-2{
+
+    width:450px;
+
+    height:450px;
+
+    background:#7c3aed;
+
+    right:-150px;
+
+    bottom:-150px;
+
+}
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+.contact-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.info-card{
+
+    display:flex;
+
+    gap:20px;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    font-size:1.5rem;
+
+}
+
+.info-card h4{
+
+    color:white;
+
+}
+
+.info-card p,
+.info-card strong,
+.info-card small{
+
+    color:#d7e5f7;
+
+}
+
+.contact-form{
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.contact-form form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+    color:#c7d5e6;
+
+}
+
+.contact-form button{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:999px;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+}
+
+@media(max-width:992px){
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}

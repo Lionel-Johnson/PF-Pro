@@ -1,0 +1,19 @@
+<?php
+
+namespace Domains\User\Events;
+
+use App\Models\User;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+
+class UserLoggedIn
+{
+    use Dispatchable;
+    use SerializesModels;
+
+    public function __construct(
+        public readonly User $user,
+        public readonly string $ip,
+        public readonly string $userAgent
+    ) {}
+}

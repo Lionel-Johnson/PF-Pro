@@ -1,0 +1,80 @@
+:root{
+
+    /* ==========================
+       Couleurs principales
+    ========================== */
+
+    --primary:#081F5C;
+    --primary-light:#1E3A8A;
+    --primary-dark:#061742;
+
+    --violet:#6D28D9;
+    --violet-light:#8B5CF6;
+
+    --cyan:#22D3EE;
+
+    --gold:#D4AF37;
+    --gold-light:#F4D160;
+
+    --white:#FFFFFF;
+    --light:#F8FAFC;
+
+    --text:#E2E8F0;
+    --text-dark:#334155;
+
+    /* ==========================
+       Dégradés officiels
+    ========================== */
+
+    --gradient-primary:
+        linear-gradient(
+            135deg,
+            #081F5C 0%,
+            #1E3A8A 50%,
+            #6D28D9 100%
+        );
+
+    --gradient-gold:
+        linear-gradient(
+            135deg,
+            #D4AF37,
+            #F4D160
+        );
+
+    /* ==========================
+       Glass
+    ========================== */
+
+    --glass-bg:rgba(255,255,255,.08);
+
+    --glass-border:
+        rgba(255,255,255,.16);
+
+    /* ==========================
+       Ombres
+    ========================== */
+
+    --shadow-sm:
+        0 8px 25px rgba(8,31,92,.12);
+
+    --shadow-md:
+        0 20px 45px rgba(8,31,92,.18);
+
+    --shadow-lg:
+        0 35px 80px rgba(8,31,92,.25);
+
+    /* ==========================
+       Rayons
+    ========================== */
+
+    --radius-sm:12px;
+    --radius-md:20px;
+    --radius-lg:30px;
+
+    /* ==========================
+       Animations
+    ========================== */
+
+    --transition:.35s ease;
+
+}

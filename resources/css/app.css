@@ -1,0 +1,40 @@
+@import "./theme/variables.css";
+@import "./theme/typography.css";
+@import "./theme/glass.css";
+@import "./theme/buttons.css";
+@import "./theme/aurora.css";
+@import "./theme/animations.css";
+
+@import "./layout/front.css";
+@import "./layout/navbar.css";
+
+@import "./sections/hero.css";
+@import "./sections/services.css";
+@import "./sections/about.css";
+@import "./sections/portfolio.css";
+@import "./sections/testimonials.css";
+@import "./sections/contact.css";
+@import "./sections/partners.css";
+@import "./sections/contact.css";
+
+
+
+@import "./layout/footer.css";
+
+@import "./variables.css";
+
+@import "./animations.css";
+
+/* Layout */
+
+@import "./layout/front.css";
+
+@import "./layout/navbar.css";
+
+/* Sections */
+
+@import "./sections/hero.css";
+
+@import "./sections/services.css";
+
+@import "./layout/footer.css";

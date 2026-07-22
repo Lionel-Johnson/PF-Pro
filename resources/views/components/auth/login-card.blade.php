@@ -1,0 +1,5 @@
+<div class="w-full max-w-md mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8">
+
+    {{ $slot }}
+
+</div>

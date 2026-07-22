@@ -1,0 +1,31 @@
+.btn-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 34px;
+
+    border-radius:999px;
+
+    background:var(--gradient-gold);
+
+    color:#081F5C;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-lg);
+
+}

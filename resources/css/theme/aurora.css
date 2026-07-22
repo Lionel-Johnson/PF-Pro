@@ -1,0 +1,105 @@
+.aurora{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--gradient-primary);
+
+}
+
+.aurora::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    left:-180px;
+
+    top:-250px;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(34,211,238,.22),
+
+            transparent 70%
+
+        );
+
+    filter:blur(40px);
+
+    animation:auroraMove1 18s infinite alternate ease-in-out;
+
+}
+
+.aurora::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    right:-220px;
+
+    bottom:-220px;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(109,40,217,.24),
+
+            transparent 70%
+
+        );
+
+    filter:blur(45px);
+
+    animation:auroraMove2 24s infinite alternate ease-in-out;
+
+}
+
+@keyframes auroraMove1{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(120px,80px);
+
+    }
+
+}
+
+@keyframes auroraMove2{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,-70px);
+
+    }
+
+}

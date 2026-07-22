@@ -1,0 +1,61 @@
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    color:var(--text-dark);
+
+    line-height:1.7;
+
+    background:var(--light);
+
+}
+
+h1,h2,h3,h4{
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+.section-title{
+
+    max-width:760px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title .badge{
+
+    margin-bottom:20px;
+
+}
+
+.section-title h2{
+
+    font-size:clamp(2.2rem,4vw,3.6rem);
+
+}
+
+.section-title p{
+
+    margin-top:22px;
+
+    font-size:1.05rem;
+
+    color:#CBD5E1;
+
+}
