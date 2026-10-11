@@ -79,6 +79,30 @@ Le serveur enregistre d'abord la demande. Si le transport SMTP accepte l'envoi, 
 
 L'hébergement doit faire pointer son dossier public vers `public/`, utiliser HTTPS et autoriser l'écriture dans `storage` et `bootstrap/cache`.
 
+## SMTP gratuit : configuration Brevo intégrée
+
+[Brevo](https://www.brevo.com/products/transactional-email/) propose actuellement une offre gratuite avec relais SMTP et jusqu’à **300 e-mails par jour**. Les limites et conditions peuvent évoluer : consulter l’offre avant inscription. Le projet inclut un transport `brevo` utilisant `smtp-relay.brevo.com` sur le port 587 ; aucune dépendance supplémentaire n’est nécessaire.
+
+1. Créer un compte Brevo et suivre sa procédure d’activation de l’envoi transactionnel.
+2. Ajouter et valider une adresse d’expéditeur. Authentifier le domaine selon les instructions Brevo pour améliorer la délivrabilité.
+3. Dans **Paramètres > SMTP & API > SMTP**, relever le login SMTP et générer une clé SMTP dédiée à `PF-Pro`.
+4. Renseigner ces valeurs dans le `.env` du serveur Laravel, sans les publier sur GitHub :
+
+```dotenv
+MAIL_MAILER=brevo
+BREVO_SMTP_LOGIN=login-affiche-dans-brevo
+BREVO_SMTP_KEY=cle-smtp-secrete
+MAIL_FROM_ADDRESS=expediteur-valide@votre-domaine.example
+MAIL_FROM_NAME="Lionel Concept"
+PORTFOLIO_CONTACT_EMAIL=lionelconcept1@gmail.com
+```
+
+Utiliser la **clé SMTP**, pas une clé API ni le mot de passe du compte. Le login SMTP n’est pas nécessairement l’adresse de connexion au compte Brevo. Les paramètres génériques `MAIL_HOST` et `MAIL_PORT` ne sont pas utilisés lorsque `MAIL_MAILER=brevo`.
+
+Exécuter `php artisan config:cache`, envoyer une demande depuis le formulaire, puis vérifier la réception et le statut dans `/administration/contacts`. Une connexion SMTP acceptée ne garantit pas le placement dans la boîte principale. Aucun compte, secret ou expéditeur Brevo n’est fourni par le dépôt ; l’intégration est préparée, mais l’envoi réel n’est pas activé tant que ces étapes ne sont pas effectuées. Un hébergement Laravel est toujours nécessaire, y compris avec ce service gratuit.
+
+Documentation : [envoi via Brevo SMTP](https://help.brevo.com/hc/en-us/articles/7924908994450-Send-transactional-emails-using-Brevo-SMTP), [création des clés SMTP](https://help.brevo.com/hc/en-us/articles/7959631848850-Create-and-manage-your-SMTP-keys).
+
 ## Mise en production Laravel
 
 Après installation des dépendances et configuration du fichier `.env` sur le serveur :
