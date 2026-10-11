@@ -160,3 +160,13 @@ Lors de la vérification locale du 11 octobre 2026 : **36 tests réussis, 125 as
 - **Erreur de base de données** : vérifier la connexion dans `.env`, l’existence de la base SQLite si utilisée, puis l’état des migrations avec `php artisan migrate:status`.
 - **Erreur 419 au formulaire** : recharger la page et vérifier la configuration des sessions et de l’URL du site.
 - **Le formulaire ouvre la messagerie** : il s’agit de l’export statique ; déployer Laravel pour obtenir l’enregistrement et la transmission côté serveur.
+
+## Déploiement statique sur Vercel
+
+Le fichier `vercel.json` configure l’export du portfolio avec `node scripts/build-pages.mjs` et le dossier de sortie `dist`. L’export ne nécessite pas les dépendances Vite : l’étape d’installation vérifie uniquement la disponibilité de Node.js.
+
+Dans le projet Vercel lié à `PF-Pro`, utiliser la racine du dépôt comme **Root Directory** et Node.js 24.x. Les réglages de build et de sortie sont fournis par `vercel.json`. Les pushes sur la branche de production déclenchent un déploiement si l’intégration Git est activée.
+
+Si le message « No Output Directory named dist found » apparaît sur un ancien commit, ouvrir **Deployments** et lancer le déploiement du dernier commit de `main`, qui contient cette configuration. Si l’erreur persiste, vérifier la racine du projet et les journaux de build.
+
+Cette configuration publie la version statique : le formulaire prépare un brouillon e-mail, sans enregistrement en base ni SMTP. Ne pas ajouter de clé Brevo dans le JavaScript ou les fichiers exportés. Pour le formulaire Laravel, héberger le backend PHP avec une base persistante.
