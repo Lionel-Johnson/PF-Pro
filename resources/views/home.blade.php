@@ -9,6 +9,7 @@
   <meta property="og:title" content="Lionel Brice NGOUVI MOUKENDOU — Portfolio professionnel">
   <meta property="og:description" content="Découvrez mon parcours, mes domaines d’expertise et la refonte du site du SCIPT INTERNATIONAL.">
   <meta property="og:type" content="website">
+  <link rel="icon" href="{{ asset('portfolio/logo-lionel-concept.jpeg') }}" type="image/jpeg">
   <title>Lionel Brice NGOUVI MOUKENDOU — Portfolio professionnel</title>
   
   <link rel="stylesheet" href="{{ asset('portfolio/portfolio.css') }}">
@@ -29,7 +30,7 @@
 </svg>
 <header class="navbar">
   <div class="container nav-inner">
-    <a class="brand" href="#hero"><span aria-hidden="true">LC</span><span>Lionel <b>Concept</b></span></a>
+    <a class="brand" href="#hero"><img src="{{ asset('portfolio/logo-lionel-concept.jpeg') }}" alt="" width="42" height="42"><span>Lionel <b>Concept</b></span></a>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     <nav id="navigation" aria-label="Navigation principale">
       <a href="#about">Profil</a><a href="#experience">Parcours</a><a href="#services">Expertises</a><a href="#portfolio">Réalisations</a><a href="#contact">Formulaire de contact</a>
@@ -49,7 +50,7 @@
       <p class="small">CV actualisé en octobre 2026 · PDF, 3 pages</p>
     </div>
     <aside class="portrait-card">
-      <div class="portrait portrait-initials" aria-label="Lionel Brice">LB</div>
+      <img class="portrait" src="{{ asset('portfolio/portrait-lionel.jpeg') }}" alt="Portrait de Lionel Brice NGOUVI MOUKENDOU" width="188" height="250" fetchpriority="high">
       <div class="portrait-caption"><span>POSTE ACTUEL</span><strong>Chargé du Développement et de la Communication Digitale</strong><p>SCIPT INTERNATIONAL<br>Depuis le 14 septembre 2026</p></div>
     </aside>
   </div>

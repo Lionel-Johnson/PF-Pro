@@ -9,5 +9,3 @@
 @media print{.navbar,.actions,.filters,.contact-form,#back-top,footer{display:none}.hero,.section{padding:20px 0}.container{width:100%}body{color:#000;background:#fff}.hero-grid,.about-grid,.contact-grid{display:block}.portrait-card{display:none}.alternate,.card{background:#fff;color:#000}p,.eyebrow,.timeline-date,.timeline time,.company{color:#333}.project-art{display:none}.timeline article,.card{break-inside:avoid}.tags span{color:#333}}
 .honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .contact-form button:disabled{opacity:.6;cursor:wait}
-
-.portrait-initials{display:grid;place-items:center;min-height:250px;font-size:5rem;font-weight:800;color:#f5cd75;background:linear-gradient(135deg,#081f5c,#3d2372)}
