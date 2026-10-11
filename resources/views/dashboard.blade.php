@@ -1,19 +1,5 @@
 @extends('layouts.app')
-
-@section('title','Dashboard')
-
+@section('title', 'Tableau de bord')
 @section('content')
-
-<div class="container py-5">
-
-    <h2>
-        Tableau de bord
-    </h2>
-
-    <p>
-        Bienvenue {{ auth()->user()->name }}
-    </p>
-
-</div>
-
+<h1>Tableau de bord</h1><p>Bienvenue, {{ auth()->user()->name }}.</p><div class="actions"><a class="btn outline" href="{{ route('profile.edit') }}">Mon profil</a>@if(auth()->user()->hasRole('Super Admin'))<a class="btn primary" href="{{ route('admin.dashboard') }}">Administration</a>@endif</div>
 @endsection

@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title', 'Services')
+@section('content')
+<h1>Services</h1><a class="btn primary" href="{{ route('admin.services.create') }}">Ajouter</a><div class="table-scroll"><table><thead><tr><th>Nom</th><th>État</th><th>Actions</th></tr></thead><tbody>@forelse($services as $service)<tr><td>{{ $service->title }}</td><td>{{ $service->is_active ? 'Actif' : 'Inactif' }}</td><td><div class="admin-actions"><a href="{{ route('admin.services.edit', $service) }}">Modifier</a><form method="post" action="{{ route('admin.services.destroy', $service) }}">@csrf @method('DELETE')<button class="btn outline" type="submit">Supprimer</button></form></div></td></tr>@empty<tr><td colspan="3">Aucun élément.</td></tr>@endforelse</tbody></table></div><div class="pagination">@if($services->previousPageUrl())<a href="{{ $services->previousPageUrl() }}">Précédent</a>@endif @if($services->nextPageUrl())<a href="{{ $services->nextPageUrl() }}">Suivant</a>@endif</div>
+@endsection

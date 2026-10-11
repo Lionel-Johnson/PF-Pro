@@ -20,7 +20,7 @@ return new class extends Migration
             if (! Schema::hasColumn('users', 'enterprise_id')) {
                 $table->unsignedBigInteger('enterprise_id')
                     ->nullable()
-                    ->after('last_login_at');
+                    ->after('avatar');
             }
         });
     }

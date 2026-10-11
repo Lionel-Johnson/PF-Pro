@@ -10,21 +10,11 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
 
-            $table->boolean('is_active')
-                ->default(true);
-
-            $table->boolean('two_factor_enabled')
-                ->default(false);
-
-            $table->string('two_factor_secret')
-                ->nullable();
-
-            $table->timestamp('last_login_at')
-                ->nullable();
-
-            $table->string('last_login_ip',45)
-                ->nullable();
-
+            if (! Schema::hasColumn('users', 'is_active')) $table->boolean('is_active')->default(true);
+            if (! Schema::hasColumn('users', 'two_factor_enabled')) $table->boolean('two_factor_enabled')->default(false);
+            if (! Schema::hasColumn('users', 'two_factor_secret')) $table->string('two_factor_secret')->nullable();
+            if (! Schema::hasColumn('users', 'last_login_at')) $table->timestamp('last_login_at')->nullable();
+            if (! Schema::hasColumn('users', 'last_login_ip')) $table->string('last_login_ip', 45)->nullable();
         });
     }
 

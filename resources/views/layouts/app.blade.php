@@ -1,34 +1,3 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_','-',app()->getLocale()) }}">
-
-<head>
-
-    <meta charset="utf-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-
-    <title>@yield('title') | Lionel Concept</title>
-
-    @vite([
-        'resources/css/app.css',
-        'resources/js/app.js'
-    ])
-
-</head>
-
-<body>
-
-<x-layout.navbar/>
-
-<main>
-
-    @yield('content')
-
-</main>
-
-<x-layout.footer/>
-
-</body>
-
-</html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>@yield('title', 'Espace personnel') | Lionel Concept</title><link rel="stylesheet" href="{{ asset('portfolio/portfolio.css') }}"><link rel="stylesheet" href="{{ asset('portfolio/admin.css') }}"></head><body>
+<header class="navbar"><div class="container admin-nav"><a href="{{ route('home') }}">Lionel Concept</a>@auth<a href="{{ route('dashboard') }}">Tableau de bord</a><a href="{{ route('profile.edit') }}">Profil</a>@if(auth()->user()->hasRole('Super Admin'))<a href="{{ route('admin.contacts.index') }}">Messages</a><a href="{{ route('admin.services.index') }}">Services</a><a href="{{ route('admin.enterprises.index') }}">Entreprises</a>@endif<form method="post" action="{{ route('logout') }}">@csrf<button class="btn outline" type="submit">Déconnexion</button></form>@else<a href="{{ route('login') }}">Connexion</a>@endauth</div></header>
+<main class="container section">@if(isset($header))<h1>{{ $header }}</h1>@endif @if(session('success'))<p role="status">{{ session('success') }}</p>@endif @if($errors->any())<div role="alert"><ul>@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif {{ $slot ?? '' }} @yield('content')</main></body></html>

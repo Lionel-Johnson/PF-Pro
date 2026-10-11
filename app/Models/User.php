@@ -10,9 +10,12 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+    use \Illuminate\Database\Eloquent\Factories\HasFactory;
     use HasApiTokens;
     use Notifiable;
     use HasRoles;
+
+    protected $attributes = ['is_active' => true, 'two_factor_enabled' => false];
 
     /**
      * Les attributs assignables en masse.

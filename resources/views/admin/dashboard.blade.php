@@ -1,47 +1,5 @@
 @extends('layouts.app')
-
-@section('title','Administration')
-
+@section('title', 'Administration')
 @section('content')
-
-<div class="row g-4">
-
-    <div class="col-md-3">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h6>Entreprises</h6>
-                <h2>{{ $enterprises ?? 0 }}</h2>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h6>Utilisateurs</h6>
-                <h2>{{ $users ?? 0 }}</h2>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h6>Produits</h6>
-                <h2>{{ $products ?? 0 }}</h2>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h6>Articles</h6>
-                <h2>{{ $posts ?? 0 }}</h2>
-            </div>
-        </div>
-    </div>
-
-</div>
-
+<h1>Administration du portfolio</h1><div class="cards expertise-grid"><a class="card" href="{{ route('admin.contacts.index') }}"><h2>Messages</h2><p>Consulter les demandes et relancer les transmissions.</p></a><a class="card" href="{{ route('admin.services.index') }}"><h2>Services</h2><p>Créer, modifier et publier les domaines d’expertise.</p></a><a class="card" href="{{ route('admin.enterprises.index') }}"><h2>Entreprises</h2><p>Gérer les fiches entreprises.</p></a></div>
 @endsection

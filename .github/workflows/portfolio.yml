@@ -1,0 +1,33 @@
+name: Portfolio checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  laravel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, sqlite3, pdo_sqlite, dom, curl, zip
+          tools: composer:v2
+      - run: composer install --prefer-dist --no-interaction
+      - run: cp .env.example .env && php artisan key:generate
+      - run: php artisan test
+      - run: php artisan view:cache
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/build-pages.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: static-portfolio
+          path: dist

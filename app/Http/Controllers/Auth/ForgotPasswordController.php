@@ -1,9 +1,4 @@
-@extends('layouts.app')
+<?php
+namespace App\Http\Controllers\Auth;
 
-@section('title','Mot de passe oublié')
-
-@section('content')
-
-<x-auth.forgot-password-card/>
-
-@endsection
+class ForgotPasswordController extends PasswordResetLinkController {}

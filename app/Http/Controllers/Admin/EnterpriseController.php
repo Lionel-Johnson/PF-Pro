@@ -36,7 +36,7 @@ class EnterpriseController extends Controller
         );
 
         return redirect()
-            ->route('enterprises.index')
+            ->route('admin.enterprises.index')
             ->with('success', 'Entreprise créée avec succès.');
     }
 
@@ -60,7 +60,7 @@ class EnterpriseController extends Controller
         );
 
         return redirect()
-            ->route('enterprises.index')
+            ->route('admin.enterprises.index')
             ->with('success', 'Entreprise mise à jour.');
     }
 
@@ -69,7 +69,7 @@ class EnterpriseController extends Controller
         $this->service->delete($enterprise);
 
         return redirect()
-            ->route('enterprises.index')
+            ->route('admin.enterprises.index')
             ->with('success', 'Entreprise supprimée.');
     }
 
@@ -78,7 +78,7 @@ class EnterpriseController extends Controller
         $this->service->restore($id);
 
         return redirect()
-            ->route('enterprises.index')
+            ->route('admin.enterprises.index')
             ->with('success', 'Entreprise restaurée.');
     }
 }

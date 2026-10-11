@@ -1,0 +1,1 @@
+<nav aria-label="Navigation mobile" class="admin-nav"><a href="{{ route('home') }}">Accueil</a><a href="{{ route('home') }}#experience">Parcours</a><a href="{{ route('home') }}#services">Expertises</a><a href="{{ route('home') }}#portfolio">Réalisations</a><a href="{{ route('home') }}#contact">Formulaire de contact</a></nav>

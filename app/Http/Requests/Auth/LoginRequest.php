@@ -3,28 +3,22 @@
 namespace App\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginRequest extends FormRequest
 {
-    public function authorize(): bool
-    {
-        return true;
-    }
+    public function authorize(): bool { return true; }
 
     public function rules(): array
     {
-        return [
-            'email' => ['required','email'],
-            'password' => ['required','string'],
-            'remember' => ['nullable','boolean'],
-        ];
+        return ['email' => ['required', 'email'], 'password' => ['required', 'string'], 'remember' => ['nullable', 'boolean']];
     }
 
-    public function messages(): array
+    public function authenticate(): void
     {
-        return [
-            'email.required'=>'Adresse email obligatoire.',
-            'password.required'=>'Mot de passe obligatoire.',
-        ];
+        if (! Auth::attempt($this->only('email', 'password') + ['is_active' => true], $this->boolean('remember'))) {
+            throw ValidationException::withMessages(['email' => 'Identifiants invalides ou compte désactivé.']);
+        }
     }
 }

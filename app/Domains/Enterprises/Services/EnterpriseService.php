@@ -1,8 +1,8 @@
 <?php
 
-namespace Domains\Enterprise\Services;
+namespace Domains\Enterprises\Services;
 
-use Domains\Enterprise\Repositories\EnterpriseRepositoryInterface;
+use Domains\Enterprises\Repositories\EnterpriseRepositoryInterface;
 
 class EnterpriseService
 {

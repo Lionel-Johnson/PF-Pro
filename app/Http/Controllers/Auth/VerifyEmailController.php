@@ -1,40 +1,18 @@
-@extends('layouts.app')
+<?php
 
-@section('title','Vérification')
+namespace App\Http\Controllers\Auth;
 
-@section('content')
+use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Verified;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
-<div class="container py-5">
-
-    <div class="lc-card">
-
-        <h2>
-
-            Vérification de votre adresse email
-
-        </h2>
-
-        <p>
-
-            Consultez votre boîte mail puis cliquez sur le lien reçu.
-
-        </p>
-
-        <form method="POST"
-              action="{{ route('verification.send') }}">
-
-            @csrf
-
-            <button>
-
-                Renvoyer le lien
-
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
-
-@endsection
+class VerifyEmailController extends Controller
+{
+    public function __invoke(EmailVerificationRequest $request)
+    {
+        if (! $request->user()->hasVerifiedEmail() && $request->user()->markEmailAsVerified()) {
+            event(new Verified($request->user()));
+        }
+        return redirect()->intended(route('dashboard', absolute: false).'?verified=1');
+    }
+}

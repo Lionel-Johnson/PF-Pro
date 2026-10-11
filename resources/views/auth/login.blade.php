@@ -1,13 +1,1 @@
-@extends('layouts.app')
-
-@section('title','Connexion')
-
-@section('content')
-
-<div class="container py-5">
-
-    <x-auth.login-card/>
-
-</div>
-
-@endsection
+<x-guest-layout><h1>Connexion</h1><form method="post" action="{{ route('login') }}" class="admin-form">@csrf<label for="email">Adresse e-mail</label><input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="username"><label for="password">Mot de passe</label><input id="password" type="password" name="password" required autocomplete="current-password"><label><input type="checkbox" name="remember" value="1"> Se souvenir de moi</label><button class="btn primary" type="submit">Se connecter</button><a href="{{ route('password.request') }}">Mot de passe oublié</a></form></x-guest-layout>

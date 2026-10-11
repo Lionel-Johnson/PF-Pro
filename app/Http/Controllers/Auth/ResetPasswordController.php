@@ -1,10 +1,4 @@
-@extends('layouts.app')
+<?php
+namespace App\Http\Controllers\Auth;
 
-@section('title','Nouveau mot de passe')
-
-@section('content')
-
-<x-auth.reset-password-card
-    :token="$token"/>
-
-@endsection
+class ResetPasswordController extends NewPasswordController {}

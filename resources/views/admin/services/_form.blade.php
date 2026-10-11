@@ -1,0 +1,6 @@
+<label for="title">Titre</label><input id="title" name="title" type="text" value="{{ old('title', $service->title ?? '') }}" required>
+<label for="excerpt">Résumé</label><textarea id="excerpt" name="excerpt">{{ old('excerpt', $service->excerpt ?? '') }}</textarea>
+<label for="description">Description</label><textarea id="description" name="description">{{ old('description', $service->description ?? '') }}</textarea>
+<label for="icon">Icône</label><input id="icon" name="icon" type="text" value="{{ old('icon', $service->icon ?? '') }}" >
+<label for="position">Ordre</label><input id="position" name="position" type="number" value="{{ old('position', $service->position ?? 1) }}" required>
+<p class="small">Icônes : code, shield, palette, video, graduation-cap, briefcase.</p><label for="image">Image facultative</label><input id="image" name="image" type="file" accept="image/png,image/jpeg,image/webp"><input type="hidden" name="featured" value="0"><label><input type="checkbox" name="featured" value="1" @checked(old('featured', $service->featured ?? false))> Mettre en avant</label><input type="hidden" name="is_active" value="0"><label><input type="checkbox" name="is_active" value="1" @checked(old('is_active', $service->is_active ?? true))> Actif</label><button class="btn primary" type="submit">Enregistrer</button>

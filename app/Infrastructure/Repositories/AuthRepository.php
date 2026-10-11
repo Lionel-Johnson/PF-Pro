@@ -1,5 +1,7 @@
 <?php
 
+namespace Infrastructure\Repositories;
+
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +11,7 @@ use Domains\User\DTO\RegisterDTO;
 use Domains\User\Repositories\AuthRepositoryInterface;
 
 
-namespace Infrastructure\Repositories;
+
 
 
 class AuthRepository implements AuthRepositoryInterface

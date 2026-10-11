@@ -1,8 +1,8 @@
 <?php
 
-namespace Domains\Enterprise\Repositories;
+namespace Domains\Enterprises\Repositories;
 
-use Domains\Enterprise\Models\Enterprise;
+use Domains\Enterprises\Models\Enterprise;
 
 class EnterpriseRepository implements EnterpriseRepositoryInterface
 {

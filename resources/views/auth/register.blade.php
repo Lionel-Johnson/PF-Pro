@@ -1,13 +1,1 @@
-@extends('layouts.app')
-
-@section('title','Inscription')
-
-@section('content')
-
-<div class="container py-5">
-
-    <x-auth.register-card/>
-
-</div>
-
-@endsection
+<x-guest-layout><h1>Créer un compte</h1><form method="post" action="{{ route('register') }}" class="admin-form">@csrf<label for="name">Nom</label><input id="name" name="name" value="{{ old('name') }}" required autocomplete="name"><label for="email">Adresse e-mail</label><input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email"><label for="password">Mot de passe</label><input id="password" type="password" name="password" required autocomplete="new-password"><label for="password_confirmation">Confirmer le mot de passe</label><input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password"><button class="btn primary" type="submit">Créer le compte</button></form></x-guest-layout>
